@@ -24,13 +24,36 @@ li.playing:before { content: '♬'; width: 14px; height: 14px; padding: 3px; lin
   #shortcuts { display: none; }
 }
 
+body {
+  background-color: darkgray;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 main h1 {
   font-size: 27px;
+}
+
+main > article, main > aside {
+  background-color: ivory;
+}
+
+article, aside, header {
+  max-width: 500px;
+  width: 100%;
+}
+
+header {
+  background-color: ivory;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1000px) {
+  header { max-width: 1000px; }
 }
 
 button {
@@ -48,23 +71,24 @@ button:hover {
 }
 
 .home h1 {
-  font-size: 27px;
+  font-size: 26px;
   text-align: center;
 }
 
 .home .flynnda {
-  width: 544px;
+  min-width: 480px;
+  max-width: 544px;
 }
 
 .home .nav {
   display: block;
   margin: 20px auto;
-  width: 460px;
+  /* width: 460px; */
 }
 
 .letters {
   padding: 0 20px;
-  width: 480px;
+  /* width: 480px; */
 }
 
 .letters article {
@@ -73,7 +97,7 @@ button:hover {
 
 .songs {
   text-align: center;
-  max-width: 544px;
+  /* max-width: 544px; */
 }
 
 .songs p {
@@ -82,10 +106,10 @@ button:hover {
 
 .flynnda {
   background: no-repeat url("flynnda-megaphone-665.png");
-  background-position: left;
+  background-position: 10px 0;
   height: 510px;
   margin-bottom: 20px;
-  min-width: 480px;
+  /* min-width: 480px; */
 }
 
 button.play-all {
@@ -93,5 +117,6 @@ button.play-all {
 }
 
 .playlist {
-  padding-left: 20px;
+  margin: 0 auto;
+  padding: 20px 10px 20px 30px;
 }
