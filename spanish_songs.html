@@ -49,55 +49,62 @@
           } else if (unicode == 32) {
             audio.playPause();
           }
+        });
+        // Enable button play
+        $('button.play-all').click(function(e) {
+          audio.playPause();
         })
       });
     </script>
   </head>
   <body>
     <main>
-      <div class="flynnda">
+      <article class="songs">
         <h1>Poemas y canciones de flynn kinder</h1>
         <h1>Flynn Kindergarten Poems And Songs</h1>
-        <button type="button" class="play-all">
-          Haz clic aquí para escuchar todos o elige uno individualmente de la lista.
-        </button>
-        <button type="button">
-          Haz clic aquí para las letras.
-        </button>
-        <p>Or choose one individually from the list.</p>
-      </div>
-      <div class="playlist">
-        <audio preload></audio>
-        <ol>
-          <li><a href="#" data-src="songs/Intro.m4a">Introduction</a></li>
-          <li><a href="#" data-src="songs/Good_Morning.m4a">Good Morning</a></li>
-          <li><a href="#" data-src="songs/The_ABCs.m4a">The ABCs</a></li>
-          <li><a href="#" data-src="songs/2_Little_Hands_10_Little_Fingers.m4a">2 Little Hands, 10 Little Fingers</a></li>
-          <li><a href="#" data-src="songs/The_Funky_Bluesy_ABCs.m4a">The Funky Bluesy ABCs</a></li>
-          <li><a href="#" data-src="songs/Blowing_Bubbles.m4a">Blowing Bubbles</a></li>
-          <li><a href="#" data-src="songs/Crackers_and_Crumbs.m4a">Crackers and Crumbs</a></li>
-          <li><a href="#" data-src="songs/I_Love_Colors.m4a">I Love Colors</a></li>
-          <li><a href="#" data-src="songs/Good_Morning_Early_Bird.m4a">Good Morning Early Bird</a></li>
-          <li><a href="#" data-src="songs/Creeping.m4a">Creeping</a></li>
-          <li><a href="#" data-src="songs/Thank_You.m4a">Thank You</a></li>
-          <li><a href="#" data-src="songs/Im_Thankful.m4a">I’m Thankful</a></li>
-          <li><a href="#" data-src="songs/Days_Of_The_Week.m4a">Days of the Week</a></li>
-          <li><a href="#" data-src="songs/Months_Of_The_Year.m4a">Months of the Year</a></li>
-          <li><a href="#" data-src="songs/Five_Little_Ducks.m4a">5 Little Ducks</a></li>
-          <li><a href="#" data-src="songs/All_The_Leaves.m4a">All The Leaves</a></li>
-          <li><a href="#" data-src="songs/Leaves_Are_Falling.m4a">Leaves Are Falling</a></li>
-          <li><a href="#" data-src="songs/Leaves,_Leaves_Falling_Down.m4a">Leaves, Leaves Falling Down</a></li>
-          <li><a href="#" data-src="songs/Snowflakes.m4a">Snowflakes</a></li>
-          <li><a href="#" data-src="songs/It_Is_Snowing.m4a">It Is Snowing</a></li>
-          <li><a href="#" data-src="songs/Water.m4a">Water</a></li>
-          <li><a href="#" data-src="songs/3_Little_Fish.m4a">3 Little Fish</a></li>
-          <li><a href="#" data-src="songs/Im_A_Little_Fishy.m4a">I’m A Little Fishy</a></li>
-          <li><a href="#" data-src="songs/Kindergarten_Sight_Words.m4a">Kindergarten Sight Words</a></li>
-          <li><a href="#" data-src="songs/The_Alphafriends.m4a">Alphafriends</a></li>
-          <li><a href="#" data-src="songs/Count_By_10s.m4a">Let’s Count by 10s</a></li>
-          <li><a href="#" data-src="songs/Count_To_100.m4a">Let’s Count to 100!</a></li>
-          <li><a href="#" data-src="songs/Goodbye.m4a">Goodbye</a></li>        
-        </ol>
-      </div>
+        <div class="flynnda"></div>
+        <p>
+          <button type="button" class="play-all">Haz clic aquí para escuchar todos</button>
+          <span>o elige uno individualmente de la lista.</span>
+        </p>
+        <p>
+          <button type="button" class="play-all"> Click here to play all </button>
+          <span>Or choose one individually from the list.</span>
+        </p>
+        <p>
+          <button type="button" onclick="window.location='pdfs/Spanish_Songs_and_Poems.pdf';">
+            Haz clic aquí para las letras.
+          </button>
+        </p>
+        <p>
+          <button type="button" onclick="window.location='pdfs/Spanish_Songs_and_Poems.pdf';">
+            Click here for the lyrics.
+          </button>
+        </p>
+      </article>
+      <aside>
+        <div class="playlist">
+          <audio preload></audio>
+          <ol>
+            <li><a href="#" data-src="songs-es/1-Buenos_Dias.mp3">Buenos días</a></li>
+            <li><a href="#" data-src="songs-es/2-Introduction-El_Abecedario.mp3">El abecedario</a></li>
+            <li><a href="#" data-src="songs-es/3-Diez_Deditos.mp3">Diez deditos</a></li>
+            <li><a href="#" data-src="songs-es/4-Las_Vocales.mp3">Las vocales</a></li>
+            <li><a href="#" data-src="songs-es/5-El_agua.mp3">El agua</a></li>
+            <li><a href="#" data-src="songs-es/6-Los_Dias.mp3">Los días</a></li>
+            <li><a href="#" data-src="songs-es/7-Los_Meses.mp3">Los meses</a></li>
+            <li><a href="#" data-src="songs-es/8-Cabeza_y_Hombros.mp3">Cabeza, hombros, rodillas y pies</a></li>
+            <li><a href="#" data-src="songs-es/9-Un_Pulpito.mp3">Un pulpito</a></li>
+            <li><a href="#" data-src="songs-es/10-Sonidos_Iniciales.mp3">Sonidos iniciales</a></li>
+            <li><a href="#" data-src="songs-es/11-A_la_rueda_rueda.m4a">A la rueda, rueda</a></li>
+            <li><a href="#" data-src="songs-es/12-Pitó_pitó_colorito.m4a">Pito, pito colorito</a></li>
+            <li><a href="#" data-src="songs-es/13-A_la_una.m4a">A la una</a></li>
+            <li><a href="#" data-src="songs-es/14-A_A_A.m4a">AAA... Mi abuelita me dará</a></li>
+            <li><a href="#" data-src="songs-es/15-Sobre_el_mar.m4a">Sobre el mar</a></li>
+            <li><a href="#" data-src="songs-es/16-Marinero.m4a">Marinero</a></li>
+          </ol>
+        </div>
+      </aside>
     </main>
   </body>
+</html>

@@ -35,7 +35,7 @@ main {
 }
 
 main h1 {
-  font-size: 27px;
+  font-size: 26px;
 }
 
 main > article, main > aside {
@@ -53,7 +53,7 @@ header {
 }
 
 button {
-  background-color: lightskyblue;
+  background-color: rgb(126,199,227); /* lightskyblue; */
   border-radius: 10px;
   color: #333;
   font-size: 120%;
@@ -63,7 +63,7 @@ button {
 
 button:hover {
   background-color: #333;
-  color: lightskyblue;
+  color: rgb(126,199,227); /* lightskyblue; */
 }
 
 .home h1 {
