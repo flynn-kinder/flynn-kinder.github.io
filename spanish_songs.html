@@ -1,0 +1,103 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>audio.js</title>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    <link href="base.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./audiojs/audio.js"></script>
+    <script>
+      $(function() { 
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+        
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="flynnda">
+        <h1>Poemas y canciones de flynn kinder</h1>
+        <h1>Flynn Kindergarten Poems And Songs</h1>
+        <button type="button" class="play-all">
+          Haz clic aquí para escuchar todos o elige uno individualmente de la lista.
+        </button>
+        <button type="button">
+          Haz clic aquí para las letras.
+        </button>
+        <p>Or choose one individually from the list.</p>
+      </div>
+      <div class="playlist">
+        <audio preload></audio>
+        <ol>
+          <li><a href="#" data-src="songs/Intro.m4a">Introduction</a></li>
+          <li><a href="#" data-src="songs/Good_Morning.m4a">Good Morning</a></li>
+          <li><a href="#" data-src="songs/The_ABCs.m4a">The ABCs</a></li>
+          <li><a href="#" data-src="songs/2_Little_Hands_10_Little_Fingers.m4a">2 Little Hands, 10 Little Fingers</a></li>
+          <li><a href="#" data-src="songs/The_Funky_Bluesy_ABCs.m4a">The Funky Bluesy ABCs</a></li>
+          <li><a href="#" data-src="songs/Blowing_Bubbles.m4a">Blowing Bubbles</a></li>
+          <li><a href="#" data-src="songs/Crackers_and_Crumbs.m4a">Crackers and Crumbs</a></li>
+          <li><a href="#" data-src="songs/I_Love_Colors.m4a">I Love Colors</a></li>
+          <li><a href="#" data-src="songs/Good_Morning_Early_Bird.m4a">Good Morning Early Bird</a></li>
+          <li><a href="#" data-src="songs/Creeping.m4a">Creeping</a></li>
+          <li><a href="#" data-src="songs/Thank_You.m4a">Thank You</a></li>
+          <li><a href="#" data-src="songs/Im_Thankful.m4a">I’m Thankful</a></li>
+          <li><a href="#" data-src="songs/Days_Of_The_Week.m4a">Days of the Week</a></li>
+          <li><a href="#" data-src="songs/Months_Of_The_Year.m4a">Months of the Year</a></li>
+          <li><a href="#" data-src="songs/Five_Little_Ducks.m4a">5 Little Ducks</a></li>
+          <li><a href="#" data-src="songs/All_The_Leaves.m4a">All The Leaves</a></li>
+          <li><a href="#" data-src="songs/Leaves_Are_Falling.m4a">Leaves Are Falling</a></li>
+          <li><a href="#" data-src="songs/Leaves,_Leaves_Falling_Down.m4a">Leaves, Leaves Falling Down</a></li>
+          <li><a href="#" data-src="songs/Snowflakes.m4a">Snowflakes</a></li>
+          <li><a href="#" data-src="songs/It_Is_Snowing.m4a">It Is Snowing</a></li>
+          <li><a href="#" data-src="songs/Water.m4a">Water</a></li>
+          <li><a href="#" data-src="songs/3_Little_Fish.m4a">3 Little Fish</a></li>
+          <li><a href="#" data-src="songs/Im_A_Little_Fishy.m4a">I’m A Little Fishy</a></li>
+          <li><a href="#" data-src="songs/Kindergarten_Sight_Words.m4a">Kindergarten Sight Words</a></li>
+          <li><a href="#" data-src="songs/The_Alphafriends.m4a">Alphafriends</a></li>
+          <li><a href="#" data-src="songs/Count_By_10s.m4a">Let’s Count by 10s</a></li>
+          <li><a href="#" data-src="songs/Count_To_100.m4a">Let’s Count to 100!</a></li>
+          <li><a href="#" data-src="songs/Goodbye.m4a">Goodbye</a></li>        
+        </ol>
+      </div>
+    </main>
+  </body>
