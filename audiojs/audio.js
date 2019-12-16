@@ -150,7 +150,7 @@
       flashError: function() {
         var player = this.settings.createPlayer,
             errorMessage = getByClass(player.errorMessageClass, this.wrapper),
-            html = 'Missing <a href="http://get.adobe.com/flashplayer/">flash player</a> plugin.';
+            html = 'Missing <a href="https://get.adobe.com/flashplayer/">flash player</a> plugin.';
         if (this.mp3) html += ' <a href="'+this.mp3+'">Download audio file</a>.';
         container[audiojs].helpers.removeClass(this.wrapper, player.loadingClass);
         container[audiojs].helpers.addClass(this.wrapper, player.errorClass);
